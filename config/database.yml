@@ -1,0 +1,29 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  url: <%= ENV['DATABASE_URL']&.gsub('?', '_development?') %>
+
+  # In non-dockerized local, use this instead:
+  # database: punchcloq_development
+
+
+test:
+  <<: *default
+  url: <%= ENV['DATABASE_URL']&.gsub('?', '_test?') %>
+
+  # In non-dockerized local, use this instead:
+  # database: punchcloq_test
+
+production:
+  <<: *default
+
+  # In non-dockerized local, use this instead:
+  # database: punchcloq_production
+  # username: <%= ENV['DATABASE_USERNAME'] %>
+  # password: <%= ENV['DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL']&.gsub('?', '_production?') %>
+
