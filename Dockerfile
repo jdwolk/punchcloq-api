@@ -62,11 +62,11 @@ USER rails:rails
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
 # For local dev
-#ENTRYPOINT ["rails/bin", "server", "-b", "0.0.0.0"]
+#ENTRYPOINT ["./bin/rails", "server", "-b", "0.0.0.0"]
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
-#CMD ["./bin/rails", "server"]
+CMD ["./bin/rails", "server", "-b", "0.0.0.0"]
 
 # This is for development
-CMD ["bin/rails", "s", "-b", "ssl://0.0.0.0:3000?key=/rails/config/server.key&cert=/rails/config/server.crt"]
+#CMD ["bin/rails", "s", "-b", "ssl://0.0.0.0:3000?key=/rails/config/server.key&cert=/rails/config/server.crt"]
