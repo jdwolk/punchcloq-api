@@ -133,6 +133,10 @@ GEM
       railties (>= 3.0.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    graphiql-rails (1.10.0)
+      railties
+    graphql (2.3.2)
+      base64
     i18n (1.14.4)
       concurrent-ruby (~> 1.0)
     io-console (0.7.2)
@@ -312,6 +316,8 @@ DEPENDENCIES
   devise-jwt
   dotenv
   factory_girl_rails
+  graphiql-rails
+  graphql (~> 2.3)
   pg (~> 1.1)
   pry-byebug
   puma (>= 5.0)

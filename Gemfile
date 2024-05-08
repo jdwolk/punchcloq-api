@@ -31,6 +31,7 @@ end
 group :development do
   gem 'spring'
   gem 'web-console'
+  gem 'graphiql-rails'
 end
 
 group :test do
@@ -40,3 +41,5 @@ group :test do
   gem 'rspec-rails'
 end
 
+
+gem "graphql", "~> 2.3"
